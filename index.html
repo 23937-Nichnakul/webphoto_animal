@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>คลังภาพสัตว์โลกสุดน่ารัก</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f7f9fa;
+            color: #333;
+            padding: 20px;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding: 20px 0;
+        }
+
+        header h1 {
+            color: #2c3e50;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        header p {
+            color: #7f8c8d;
+            font-size: 1.1rem;
+        }
+
+        /* ส่วนจัดวางรูปภาพ (Grid) */
+        .gallery-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        /* การ์ดแต่ละใบ */
+        .animal-card {
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .animal-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+        }
+
+        /* รูปภาพ */
+        .animal-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover; /* ทำให้รูปไม่เบี้ยว */
+            display: block;
+        }
+
+        /* รายละเอียดใต้รูป */
+        .animal-info {
+            padding: 15px;
+        }
+
+        .animal-info h3 {
+            font-size: 1.3rem;
+            color: #2c3e50;
+            margin-bottom: 8px;
+        }
+
+        .animal-info p {
+            color: #7f8c8d;
+            font-size: 0.95rem;
+            line-height: 1.4;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>My Animal Gallery 🐾</h1>
+        <p>รวมภาพสัตว์โลกน่ารักที่คุณต้องหลงรัก</p>
+    </header>
+
+    <main class="gallery-container">
+
+        <div class="animal-card">
+            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=600" alt="แมว">
+            <div class="animal-info">
+                <h3>เจ้าเหมียวส้ม</h3>
+                <p>แมวส้มผู้เป็นมิตรและชอบนอนกลางวัน</p>
+            </div>
+        </div>
+
+        <div class="animal-card">
+            <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?q=80&w=600" alt="สุนัข">
+            <div class="animal-info">
+                <h3>เจ้าตูบแสนซน</h3>
+                <p>สุนัขพันธุ์โกลเดน รีทรีฟเวอร์ ร่าเริง ขี้เล่น</p>
+            </div>
+        </div>
+
+        <div class="animal-card">
+            <img src="https://images.unsplash.com/photo-15076664 km-50a2a4a27094?q=80&w=600" alt="กระต่าย" onerror="this.src='https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?q=80&w=600'">
+            <div class="animal-info">
+                <h3>กระต่ายน้อย</h3>
+                <p>กระต่ายหูยาว ขนฟูนุ่ม ชอบกินแครอท</p>
+            </div>
+        </div>
+
+        </main>
+
+</body>
+</html>
