@@ -3,43 +3,57 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>คลังภาพสัตว์โลกสุดน่ารัก</title>
+    <title>🎪 คลังภาพสัตว์โลกสุดคิวท์ 🐾</title>
     <style>
+        /* นำเข้าฟอนต์น่ารักๆ จาก Google Fonts */
+        @import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@300..700&family=Noto+Sans+Thai:wght@100..900&display=swap');
+
         * {
             box-sizing: border-box;
             margin: 0;
             padding: 0;
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Fredoka', 'Noto Sans Thai', sans-serif;
         }
 
         body {
-            background-color: #f7f9fa;
-            color: #333;
-            padding: 20px;
+            /* พื้นหลังสีเหลืองพาสเทลสดใส ไล่เฉดสีนุ่มๆ */
+            background: linear-gradient(135deg, #fef9e7 0%, #fcf3cf 100%);
+            color: #4a4a4a;
+            padding: 30px 20px;
+            min-height: 100vh;
         }
 
         header {
             text-align: center;
-            margin-bottom: 40px;
-            padding: 20px 0;
+            margin-bottom: 50px;
+            position: relative;
         }
 
+        /* ตกแต่งหัวข้อให้เด่นและน่ารัก */
         header h1 {
-            color: #2c3e50;
-            font-size: 2.5rem;
-            margin-bottom: 10px;
+            color: #ff6b6b; /* สีชมพูส้มสดใส */
+            font-size: 3rem;
+            margin-bottom: 12px;
+            text-shadow: 3px 3px 0px #fff, 5px 5px 0px #ffeaa7;
+            display: inline-block;
         }
 
         header p {
-            color: #7f8c8d;
-            font-size: 1.1rem;
+            color: #48dbfb; /* ฟ้าสดใส */
+            font-size: 1.3rem;
+            font-weight: bold;
+            background: #fff;
+            display: inline-block;
+            padding: 6px 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.05);
         }
 
         /* ส่วนจัดวางรูปภาพ (Grid) */
         .gallery-container {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 25px;
+            gap: 30px;
             max-width: 1200px;
             margin: 0 auto;
         }
@@ -47,77 +61,112 @@
         /* การ์ดแต่ละใบ */
         .animal-card {
             background: white;
-            border-radius: 12px;
+            border-radius: 24px; /* มนๆ น่ารัก */
             overflow: hidden;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 8px 20px rgba(255, 107, 107, 0.08);
+            border: 4px solid #fff; /* ขอบขาวหนาๆ เหมือนกรอบรูป */
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* เอฟเฟกต์เด้งดึ๋ง */
         }
 
+        /* เอฟเฟกต์เวลาเมาส์ชี้ (Hover) */
         .animal-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            transform: translateY(-10px) scale(1.02) rotate(1deg); /* ลอยขึ้น ขยาย และเอียงนิดๆ */
+            box-shadow: 0 15px 30px rgba(255, 159, 67, 0.2);
+            border-color: #ffd32a; /* เปลี่ยนสีกรอบเป็นสีเหลืองเข้ม */
+        }
+
+        /* กล่องครอบรูปเพื่อซ่อนส่วนที่เกินเวลาซูม */
+        .img-container {
+            overflow: hidden;
+            height: 260px;
+            background-color: #f1f2f6;
         }
 
         /* รูปภาพ */
         .animal-card img {
             width: 100%;
-            height: 250px;
-            object-fit: cover; /* ทำให้รูปไม่เบี้ยว */
-            display: block;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        /* ซูมรูปข้างในเล็กน้อยเวลา Hover */
+        .animal-card:hover img {
+            transform: scale(1.1);
         }
 
         /* รายละเอียดใต้รูป */
         .animal-info {
-            padding: 15px;
+            padding: 20px;
+            text-align: center;
         }
 
         .animal-info h3 {
-            font-size: 1.3rem;
-            color: #2c3e50;
+            font-size: 1.5rem;
+            color: #ff6b6b;
             margin-bottom: 8px;
         }
 
         .animal-info p {
-            color: #7f8c8d;
-            font-size: 0.95rem;
-            line-height: 1.4;
+            color: #747d8c;
+            font-size: 1rem;
+            line-height: 1.5;
+        }
+
+        /* ตกแต่ง Footer เล็กน้อย */
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: #a4b0be;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
 
     <header>
-        <h1>My Animal Gallery 🐾</h1>
-        <p>รวมภาพสัตว์โลกน่ารักที่คุณต้องหลงรัก</p>
+        <h1>🎪 Animal Party ✨</h1>
+        <br>
+        <p>แก๊งสัตว์โลกสุดป่วน ชวนคุณมาตกหลุมรัก 💖</p>
     </header>
 
     <main class="gallery-container">
 
         <div class="animal-card">
-            <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=600" alt="แมว">
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1514888286974-6c03e2ca1dba?q=80&w=600" alt="แมว">
+            </div>
             <div class="animal-info">
-                <h3>เจ้าเหมียวส้ม</h3>
-                <p>แมวส้มผู้เป็นมิตรและชอบนอนกลางวัน</p>
+                <h3>🐱 เจ้าเหมียวส้ม</h3>
+                <p>แมวส้มผู้เป็นมิตรและชอบนอนกลางวัน งานอดิเรกคืออ้อนขอขนมเลีย</p>
             </div>
         </div>
 
         <div class="animal-card">
-            <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?q=80&w=600" alt="สุนัข">
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1543466835-00a7907e9de1?q=80&w=600" alt="สุนัข">
+            </div>
             <div class="animal-info">
-                <h3>เจ้าตูบแสนซน</h3>
-                <p>สุนัขพันธุ์โกลเดน รีทรีฟเวอร์ ร่าเริง ขี้เล่น</p>
+                <h3>🐶 เจ้าตูบหน้าเป็น</h3>
+                <p>สุนัขพันธุ์โกลเดนสุดร่าเริง วิ่งเล่นได้ทั้งวันไม่มีเหนื่อย พร้อมแจกยิ้มหวาน</p>
             </div>
         </div>
 
         <div class="animal-card">
-            <img src="https://images.unsplash.com/photo-15076664 km-50a2a4a27094?q=80&w=600" alt="กระต่าย" onerror="this.src='https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?q=80&w=600'">
+            <div class="img-container">
+                <img src="https://images.unsplash.com/photo-1585110396000-c9ffd4e4b308?q=80&w=600" alt="กระต่าย">
+            </div>
             <div class="animal-info">
-                <h3>กระต่ายน้อย</h3>
-                <p>กระต่ายหูยาว ขนฟูนุ่ม ชอบกินแครอท</p>
+                <h3>🐰 นุ่มฟูกระต่ายน้อย</h3>
+                <p>กระต่ายหูยาว ขนฟูนุ่มเหมือนปุยเมฆ เคี้ยวแครอทตุ่ยๆ ตลอดเวลา</p>
             </div>
         </div>
 
-        </main>
+    </main>
+
+    <footer>
+        <p>Made with 💛 for Animal Lovers</p>
+    </footer>
 
 </body>
 </html>
